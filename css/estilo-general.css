@@ -1,0 +1,17 @@
+body {
+
+    background-color: #3A98B9;
+}
+nav {
+    background-color:rgb(14, 40, 80) ;
+    height: 8rem;
+
+}
+a.nav-link {
+    color: white;
+}
+main {
+    background: linear-gradient(rgb(14, 40, 80),60%, #3A98B9);
+    padding: 3rem 0;
+}
+
