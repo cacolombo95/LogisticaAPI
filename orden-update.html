@@ -14,43 +14,21 @@
         <header id="header">
             <nav class="navbar navbar-expand-sm  ">
                 <div class="container">
-                  <a class="navbar-brand" href="index.html"><img src="logo.png" alt="logo" width="100rem" id="logo"></a>
+                  <a class="nav-link" id="atras" href="index.html" aria-current="page"> &#60;&#60; Atrás <span class="visually-hidden">(current)</span></a>
                   <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                       aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                   </button>
-                  <div class="collapse navbar-collapse" id="collapsibleNavId">
-                      <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                          <li class="nav-item">
-                              <a class="nav-link" href="index.html" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="#">Link</a>
-                          </li>
-                          <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CRUD</a>
-                              <div class="dropdown-menu" aria-labelledby="dropdownId">
-                                  <a class="dropdown-item" href="seguimiento.html">Seguimiento</a>
-                                  <a class="dropdown-item" href="#">Action 2</a>
-                              </div>
-                          </li>
-                      </ul>
-                      <form class="d-flex my-2 my-lg-0">
-                          <input class="form-control me-sm-2" type="text" placeholder="Search">
-                          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                      </form>
-                  </div>
                 </div>
             </nav>
         </header>
         <main>
             <div class="container" id="app">
-                <form style="background-color: aliceblue;margin:10px auto ; width: 400px; padding: 20px;">
-                    <h2>Editar Órden </h2>
-                    <p>Apellido:{{apellido}}</p>
+                <form id="crear_modificar" >
+                    <h2 id="titulo">Editar Órden </h2>
                     <div class="mb-3">
                         <label for="id">Id</label>
-                        <input type="number" name="id" id="id" disabled v-model="id">
+                        <input type="number"  name="id" id="id" disabled v-model="id">
                     </div>
                     <div class="mb-3">
                         <label for="nombre">Nombre</label>
@@ -62,10 +40,12 @@
                     </div>
                     <div class="mb-3">
                         <label for="estado">Estado</label>
-                        <input type="number" name="estado" id="estado" v-model="estado">
+                        <input type="number" min="1" max="4" name="estado" id="estado" v-model="estado">
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" id="buttonForm" class="btn btn-success" v-on:click="modificar()">Grabar</button>
                     </div>
 
-                    <button type="button" class="btn btn-success" v-on:click="modificar()">Grabar</button>
                 </form>
             </div>
 
@@ -75,7 +55,6 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
             integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
             crossorigin="anonymous"> </script>
-            <script src="./js/main.js"></script>
             <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
             <script src="./js/orden-edit.js"></script>
         </main>
